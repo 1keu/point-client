@@ -1,0 +1,115 @@
+$font-size: (
+    sentence: 16px,
+    title: 24px,
+    mini-text: 12px
+);
+$theme-colors: (
+  primary: #F4F5F7,
+  secondary: #fff,
+  success: #28a745,
+  info: #aaaaaa,
+  warning: #ffc107,
+  danger: #dc3545,
+  light: #f8f9fa,
+  dark: #000
+);
+
+$screen-xl: 1200px;
+$screen-lg: 992px;
+$screen-md: 768px;
+$screen-sm: 544px;
+$screen-xs: 480px;
+$bp-list: (
+ xs: screen and (min-width: #{$screen-xs}),
+ sm: screen and (min-width: #{$screen-sm}),
+ md: screen and (min-width: #{$screen-md}),
+ lg: screen and (min-width: #{$screen-lg}),
+ xl: screen and (min-width: #{$screen-xl})
+) !default;
+@mixin screen-mq($bp-key) {
+ @media #{map-get($bp-list, $bp-key)} {
+  @content;
+ }
+}
+@include screen-mq(lg) { 
+  body{
+  display: none;
+
+}
+}
+
+body {
+    margin: auto;
+    overflow-x: none;
+    font-family:"Noto sans JP", "Noto sans", sans-serif;
+    background-color:map-get($theme-colors, primary ) ;
+    input {
+        border: none;
+        display: block;
+        outline: none;
+        padding: 0px;
+        line-height: 48px;
+      }
+    input::placeholder {
+      font-size:map-get($font-size , sentence);
+      color:#BDBDBD;
+      line-height: 48px;
+      font-weight: 300;
+      position: relative;
+      top: 1px;
+    }
+    .header {
+        height: 56px;
+        width: 100%;
+        font-size: map-get($font-size , sentence);
+        font-weight: bold;
+        position: relative;
+        img {
+            height: 24px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+    .login {
+        width: calc(100% - 48px);
+        margin: auto;
+        padding-top: 24px;
+          .input {
+            height: 48px;
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 16px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+          }
+          div {
+            position: relative;
+            .visible {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 16px;
+                margin: auto;
+              }
+          }
+          button{
+            margin: auto;
+            margin-top: 8px;
+            height: 48px;
+            padding: 0;
+            border: none;
+            background: map-get( $theme-colors, dark );
+            color: #fff;
+            font-size: map-get( $font-size , sentence );
+            font-weight: 500;
+            width: 100%;
+            border-radius: 10px;
+            outline: none;
+          }
+        
+    }
+}

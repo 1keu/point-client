@@ -12,8 +12,21 @@
 </head>
 
 <body>
-    <div class="header"></div>
-    <script src=" index.js"></script>
+    <div class="header">
+        <img src="img/logo.svg" alt="">
+    </div>
+    <div class="login">
+        <form name="login" autocomplete="off">
+            <input type="email" placeholder="メールアドレスを入力" required class="input">
+            <div>
+                <img class="visible" src="icon/visibility_24px_outlined.svg" alt="">
+                <input type="password" size="6" maxlength="15" placeholder="パスワードを入力(6文字以上)" required
+                    class="input password">
+            </div>
+            <button type="button" class="button">ログイン</button>
+        </form>
+    </div>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

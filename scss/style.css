@@ -1,1 +1,118 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@media (min-width: 992px) {
+  body {
+    display: none;
+  }
+}
+
+body {
+  margin: auto;
+  overflow-x: none;
+  font-family: "Noto sans JP", "Noto sans", sans-serif;
+  background-color: #F4F5F7;
+}
+
+body input {
+  border: none;
+  display: block;
+  outline: none;
+  padding: 0px;
+  line-height: 48px;
+}
+
+body input::-webkit-input-placeholder {
+  font-size: 16px;
+  color: #BDBDBD;
+  line-height: 48px;
+  font-weight: 300;
+  position: relative;
+  top: 1px;
+}
+
+body input:-ms-input-placeholder {
+  font-size: 16px;
+  color: #BDBDBD;
+  line-height: 48px;
+  font-weight: 300;
+  position: relative;
+  top: 1px;
+}
+
+body input::-ms-input-placeholder {
+  font-size: 16px;
+  color: #BDBDBD;
+  line-height: 48px;
+  font-weight: 300;
+  position: relative;
+  top: 1px;
+}
+
+body input::placeholder {
+  font-size: 16px;
+  color: #BDBDBD;
+  line-height: 48px;
+  font-weight: 300;
+  position: relative;
+  top: 1px;
+}
+
+body .header {
+  height: 56px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+}
+
+body .header img {
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+body .login {
+  width: calc(100% - 48px);
+  margin: auto;
+  padding-top: 24px;
+}
+
+body .login .input {
+  height: 48px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 16px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+body .login div {
+  position: relative;
+}
+
+body .login div .visible {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 16px;
+  margin: auto;
+}
+
+body .login button {
+  margin: auto;
+  margin-top: 8px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+/*# sourceMappingURL=style.css.map */
