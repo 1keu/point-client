@@ -4,10 +4,20 @@
   }
 }
 
+@media (max-width: 345px) {
+  body {
+    display: none;
+  }
+}
+
+p, h4, h3, h2, h1 {
+  margin: auto;
+}
+
 body {
   margin: auto;
   overflow-x: none;
-  font-family: "Noto sans JP", "Noto sans", sans-serif;
+  font-family: "Noto sans","Noto sans JP", sans-serif;
   background-color: #F4F5F7;
 }
 
@@ -55,15 +65,27 @@ body input::placeholder {
   top: 1px;
 }
 
+body .fix-header {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  height: 56px;
+  margin: auto;
+  z-index: 100;
+  background-color: #F4F5F7;
+}
+
 body .header {
   height: 56px;
-  width: 100%;
+  width: calc(100% - 48px);
   font-size: 16px;
   font-weight: bold;
+  margin: auto;
   position: relative;
 }
 
-body .header img {
+body .header .logo {
   height: 24px;
   position: absolute;
   top: 0;
@@ -71,6 +93,19 @@ body .header img {
   left: 0;
   right: 0;
   margin: auto;
+}
+
+body .header .menu-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0px;
+  margin: auto;
+}
+
+body .header .page-name {
+  line-height: 56px;
+  font-size: 24px;
 }
 
 body .login {
@@ -114,5 +149,273 @@ body .login button {
   width: 100%;
   border-radius: 10px;
   outline: none;
+}
+
+body .layout {
+  width: calc(100% - 48px);
+  margin: auto;
+}
+
+body .history-tab {
+  height: 48px;
+  display: -ms-grid;
+  display: grid;
+  background-color: #F4F5F7;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  width: 100%;
+  line-height: 48px;
+  font-size: 16px;
+  font-weight: bold;
+  position: -webkit-sticky;
+  position: sticky;
+  margin: auto;
+  border-bottom: 1px solid #D7D7D7;
+  z-index: 10;
+  top: 56px;
+}
+
+body .history-tab .history-tab-left {
+  text-align: right;
+  background-color: #F4F5F7;
+  margin-right: 16px;
+}
+
+body .history-tab .history-tab-right {
+  text-align: left;
+  margin-left: 16px;
+  background-color: #F4F5F7;
+}
+
+body .history-inactive {
+  color: #BDBDBD;
+}
+
+body .history {
+  width: calc(100% - 48px);
+  margin: auto;
+}
+
+body .history .in-active {
+  display: none;
+}
+
+body .history .history-point .history-point-histories-month {
+  padding-bottom: 16px;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  font-weight: bold;
+  line-height: 80%;
+  padding-top: 24px;
+  background-color: #F4F5F7;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 104px;
+  z-index: 8;
+}
+
+body .history .history-point .history-point-histories-month .month {
+  font-size: 16px;
+}
+
+body .history .history-point .history-point-histories-month .month-points {
+  text-align: right;
+  font-size: 16px;
+}
+
+body .history .history-point .history-point-histories-month .month-points .month-points-total {
+  font-size: 13px;
+  color: #BDBDBD;
+}
+
+body .history .history-point .history-point-histories-month .month-points .month-points-p {
+  font-size: 12px;
+  color: #BDBDBD;
+}
+
+body .history .history-point .history-point-total {
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+  font-weight: bold;
+  margin-top: 24px;
+  line-height: 80%;
+}
+
+body .history .history-point .history-point-total .gived-point {
+  font-size: 12px;
+  color: #BDBDBD;
+  line-height: 18px;
+}
+
+body .history .history-point .history-point-total .total-point {
+  font-size: 24px;
+  text-align: right;
+}
+
+body .history .history-point .history-point-total .total-point .point-p {
+  color: #BDBDBD;
+  font-size: 20px;
+}
+
+body .history .history-point .history-point-histories-card {
+  margin-top: 8px;
+  height: auto;
+  padding: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fff;
+  display: -ms-grid;
+  display: grid;
+  line-height: 80%;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+  border-radius: 10px;
+}
+
+body .history .history-point .history-point-histories-card .card-username {
+  position: relative;
+  font-size: 16px;
+}
+
+body .history .history-point .history-point-histories-card .card-username p {
+  height: 16px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+
+body .history .history-point .history-point-histories-card .card-day {
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #BDBDBD;
+}
+
+body .history .history-point .history-point-histories-card .card-points {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+}
+
+body .history .history-point .history-point-histories-card:nth-child(1) {
+  margin-top: 0px;
+}
+
+body .history .history-coupon .history-coupon-histories-month {
+  padding-bottom: 16px;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  font-weight: bold;
+  line-height: 80%;
+  padding-top: 24px;
+  background-color: #F4F5F7;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 104px;
+  z-index: 8;
+}
+
+body .history .history-coupon .history-coupon-histories-month .month {
+  font-size: 16px;
+}
+
+body .history .history-coupon .history-coupon-histories .history-coupon-histories-card {
+  margin-top: 8px;
+  height: auto;
+  padding: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fff;
+  display: -ms-grid;
+  display: grid;
+  line-height: 80%;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+  border-radius: 10px;
+}
+
+body .history .history-coupon .history-coupon-histories .history-coupon-histories-card .card-coupon-username {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+body .history .history-coupon .history-coupon-histories .history-coupon-histories-card .card-coupon-couponname {
+  font-size: 16px;
+}
+
+body .history .history-coupon .history-coupon-histories .history-coupon-histories-card .card-day {
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #BDBDBD;
+}
+
+body .history .history-coupon .history-coupon-histories .history-coupon-histories-card .card-points {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+}
+
+body .history .history-coupon .history-coupon-histories .history-coupon-histories-card:nth-child(1) {
+  margin-top: 0;
+}
+
+body .point .point-list {
+  width: 100%;
+  height: auto;
+}
+
+body .point .point-list .point-card {
+  height: auto;
+  padding: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fff;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80% 20%;
+      grid-template-columns: 80% 20%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  line-height: 80%;
+}
+
+body .point .point-list .point-card .point-card-name {
+  font-size: 16px;
+  display: inline-block;
+}
+
+body .point .point-list .point-card .point-card-points {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  display: block;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+body .point .point-list .point-card .point-card-points span {
+  color: #BDBDBD;
+}
+
+body .point .point-list .point-card .point-card-arrow {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 12px;
+  margin: auto;
 }
 /*# sourceMappingURL=style.css.map */

@@ -7,10 +7,10 @@ $theme-colors: (
   primary: #F4F5F7,
   secondary: #fff,
   success: #28a745,
-  info: #aaaaaa,
+  info: #D7D7D7,
   warning: #ffc107,
   danger: #dc3545,
-  light: #f8f9fa,
+  light: #BDBDBD,
   dark: #000
 );
 
@@ -18,9 +18,9 @@ $screen-xl: 1200px;
 $screen-lg: 992px;
 $screen-md: 768px;
 $screen-sm: 544px;
-$screen-xs: 480px;
+$screen-xs: 345px;
 $bp-list: (
- xs: screen and (min-width: #{$screen-xs}),
+ xs: screen and (max-width: #{$screen-xs}),
  sm: screen and (min-width: #{$screen-sm}),
  md: screen and (min-width: #{$screen-md}),
  lg: screen and (min-width: #{$screen-lg}),
@@ -37,11 +37,19 @@ $bp-list: (
 
 }
 }
-
+@include screen-mq(xs) { 
+    body{
+    display: none;
+  
+  }
+}
+p,h4,h3,h2,h1 {
+    margin: auto;
+}
 body {
     margin: auto;
     overflow-x: none;
-    font-family:"Noto sans JP", "Noto sans", sans-serif;
+    font-family:"Noto sans","Noto sans JP", sans-serif;
     background-color:map-get($theme-colors, primary ) ;
     input {
         border: none;
@@ -58,13 +66,23 @@ body {
       position: relative;
       top: 1px;
     }
+    .fix-header {
+        position: sticky;
+        width: 100%;
+        top:0;
+        height: 56px;
+        margin: auto;
+        z-index: 100;
+        background-color: map-get($theme-colors, primary );
+    }
     .header {
         height: 56px;
-        width: 100%;
+        width: calc(100% - 48px);
         font-size: map-get($font-size , sentence);
         font-weight: bold;
+        margin: auto;
         position: relative;
-        img {
+        .logo {
             height: 24px;
             position: absolute;
             top: 0;
@@ -72,6 +90,17 @@ body {
             left: 0;
             right: 0;
             margin: auto;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0px;
+            margin: auto;
+        }
+        .page-name{
+            line-height: 56px;
+            font-size: map-get($font-size , title );
         }
     }
     .login {
@@ -111,5 +140,228 @@ body {
             outline: none;
           }
         
+    }
+
+    .layout {
+        width: calc(100% - 48px);
+        margin: auto;
+        
+    }
+    .history-tab{
+        height: 48px;
+        display: grid;
+        background-color: map-get( $theme-colors , primary );
+        grid-template-columns: 50% 50%;
+        width: 100%;
+        line-height: 48px;
+        font-size: map-get($font-size, sentence );
+        font-weight: bold;
+        position: sticky;
+        margin: auto;
+        border-bottom: 1px solid map-get( $theme-colors , info );
+        z-index: 10;
+        top: 56px;
+        .history-tab-left{
+            text-align: right;
+            background-color: map-get( $theme-colors , primary );
+            margin-right: 16px;
+        }
+        .history-tab-right{
+            text-align: left;
+            margin-left: 16px;
+            background-color: map-get( $theme-colors , primary );
+        }
+    }
+        .history-inactive{
+            color: map-get( $theme-colors , light );
+        }
+    .history {
+        .in-active {
+         display: none;
+        }
+        width: calc(100% - 48px);
+        margin: auto;
+        .history-point {
+        .history-point-histories-month{
+            padding-bottom: 16px;
+            height: auto;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            font-weight: bold;
+            line-height: 80%;
+            padding-top: 24px;
+            background-color: map-get( $theme-colors , primary );
+            position: sticky;
+            top: 104px;
+            z-index: 8;
+            .month {
+                font-size: map-get($map: $font-size, $key:sentence );
+            }
+            .month-points {
+                text-align: right;
+                font-size: map-get($map: $font-size, $key:sentence );
+                .month-points-total {
+                    font-size: 13px;
+                    color: map-get( $theme-colors , light );
+                }
+                .month-points-p {
+                    font-size: map-get($map: $font-size, $key:mini-text );
+                    color: map-get( $theme-colors , light );
+                }
+            }
+
+        }
+                .history-point-total {
+                    height: auto;
+                    display: grid;
+                    grid-template-columns: 30% 70%;
+                    font-weight: bold;
+                    margin-top: 24px;
+                    line-height: 80%;
+                    .gived-point {
+                        font-size: map-get($map: $font-size, $key:mini-text );
+                        color: map-get( $theme-colors , light );
+                        line-height: 18px;
+                    }
+                    .total-point{
+                        font-size: map-get($map: $font-size, $key:title );
+                        text-align: right;
+                        .point-p {
+                            color: map-get( $theme-colors , light );
+                            font-size: 20px;
+                        }
+                    }
+                }
+                    .history-point-histories-card {
+                        margin-top: 8px;
+                        height: auto;
+                        padding: 16px;
+                        box-sizing: border-box;
+                        background: #fff;
+                        display: grid;
+                        line-height: 80%;
+                        grid-template-columns: 70% 30%;
+                        border-radius: 10px;
+                        .card-username {
+                            position: relative;
+                            font-size: map-get($map: $font-size, $key:sentence );
+                            p {
+                                height: 16px;
+                                position: absolute;
+                                margin: auto;
+                                top: 0;
+                                bottom: 0;
+                            }
+                        }
+                        .card-day {
+                            text-align: right;
+                            font-size: map-get($map: $font-size, $key:mini-text );
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                            color: map-get( $theme-colors , light );
+                        }
+                        .card-points {
+                            font-size: map-get($map: $font-size, $key:sentence );
+                            font-weight: bold;
+                            text-align: right;
+                        }
+            }
+            .history-point-histories-card:nth-child(1) {
+                margin-top: 0px;
+            }
+        }
+        .history-coupon {
+            .history-coupon-histories-month {
+                padding-bottom: 16px;
+            height: auto;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            font-weight: bold;
+            line-height: 80%;
+            padding-top: 24px;
+            background-color: map-get( $theme-colors , primary );
+            position: sticky;
+            top: 104px;
+            z-index: 8;
+            .month {
+                font-size: map-get($map: $font-size, $key:sentence );
+            }
+            }
+            .history-coupon-histories {
+                .history-coupon-histories-card {
+                    margin-top: 8px;
+                    height: auto;
+                    padding: 16px;
+                    box-sizing: border-box;
+                    background: #fff;
+                    display: grid;
+                    line-height: 80%;
+                    grid-template-columns: 70% 30%;
+                    border-radius: 10px;
+                    .card-coupon-username {
+                        font-size: map-get($map: $font-size, $key:mini-text );
+                        margin-bottom: 10px;
+                    }
+                    .card-coupon-couponname {
+                        font-size: map-get($map: $font-size, $key:sentence );
+                    }
+                    .card-day {
+                        text-align: right;
+                        font-size: map-get($map: $font-size, $key:mini-text );
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                        color: map-get( $theme-colors , light );
+                    }
+                    .card-points {
+                        font-size: map-get($map: $font-size, $key:sentence );
+                        font-weight: bold;
+                        text-align: right;
+                    }
+                }
+                .history-coupon-histories-card:nth-child(1) {
+                    margin-top: 0;
+                }
+            }
+        }
+        }
+    .point {
+        .point-list {
+            width: 100%;
+            height: auto;
+            .point-card {
+                height: auto;
+                padding: 24px;
+                box-sizing: border-box;
+                background: map-get($theme-colors , secondary );
+                position: relative;
+                display: grid;
+                grid-template-columns: 80% 20%;
+                border-radius: 10px;
+                margin-bottom: 12px;
+                line-height: 80%;
+                .point-card-name {
+                    font-size: map-get($font-size, sentence);
+                    display: inline-block;
+                }
+                .point-card-points {
+                    font-size: map-get($font-size, sentence);
+                    font-weight: bold;
+                    text-align: right;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: 16px;
+                    span {
+                        color: #BDBDBD;
+                    }
+                }
+                .point-card-arrow {
+                    position: absolute;
+                    top: 0px;
+                    bottom: 0px;
+                    right: 12px;
+                    margin: auto;
+                }
+            }
+        }
     }
 }
