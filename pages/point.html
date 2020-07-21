@@ -8,6 +8,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700;900&family=Noto+Sans:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <title>Portfolio</title>
 </head>
 
@@ -19,37 +25,164 @@
             <img src="../icon/menu.svg" alt="" class="menu-icon">
         </div>
     </div>
-    <section class="layout point">
-        <div class="point-list">
-            <div class="point-card">
-                <div class="point-card-name">
-                    <p>
-                        ¥3000~¥4000
-                    </p>
-                </div>
-                <div class="point-card-points">
-                    <p>
-                        30<span>P</span>
-                    </p>
-                </div>
-                <img class="point-card-arrow" src="../icon/arrow_forward_ios_24px_outlined.svg" alt="">
-            </div>
 
-            <div class="point-card">
-                <div class="point-card-name">
-                    <p>
-                        ¥3000~¥4000
-                    </p>
-                </div>
-                <div class="point-card-points">
-                    <p>
-                        30<span>P</span>
-                    </p>
-                </div>
-                <img class="point-card-arrow" src="../icon/arrow_forward_ios_24px_outlined.svg" alt="">
+
+    <!-- Swiper -->
+    <div class="swiper-container tab-menu">
+        <div class="swiper-wrapper tab-wrap" name="tabWrap">
+            <div class="swiper-slide tab-label-container">
+                <input id="TAB-01" type="radio" name="tab" class="tab-switch" checked />
+                <label class="tab-label" for="TAB-01">ディナー</label>
+            </div>
+            <div class="swiper-slide tab-label-container">
+                <input id="TAB-02" type="radio" name="tab" class="tab-switch" />
+                <label class=" tab-label" for="TAB-02">ランチ</label>
+
+            </div>
+            <div class=" tab-label-container">
+                <input id="TAB-03" type="radio" name="tab" class="tab-switch" />
+                <label class="tab-label disabled" for="TAB-03">アクション</label>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="swiper-container tab-contents">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="dinner-point point">
+                    <input id="card1" type="radio" name="value-card" class="tab-switch" />
+                    <label class="point-card" for="card1">
+                        <div class="point-card-name">
+                            <p>
+                                ¥1,001~¥1,500
+                            </p>
+                        </div>
+                        <div class="point-card-points">
+                            <p>
+                                100<span>P</span>
+                            </p>
+                        </div>
+                    </label>
+
+
+                    <input id="card2" type="radio" name="value-card" class="tab-switch" />
+                    <label class="point-card" for="card2">
+                        <div class="point-card-name">
+                            <p>
+                                ¥1,501~2,000
+                            </p>
+                        </div>
+                        <div class="point-card-points">
+                            <p>
+                                150<span>P</span>
+                            </p>
+                        </div>
+                    </label>
+                    <input id="card3" type="radio" name="value-card" class="tab-switch" />
+                    <label class="point-card" for="card3">
+                        <div class="point-card-name">
+                            <p>
+                                ¥2,001~2,500
+                            </p>
+                        </div>
+                        <div class="point-card-points">
+                            <p>
+                                200<span>P</span>
+                            </p>
+                        </div>
+                    </label>
+
+                    <input id="card4" type="radio" name="value-card" class="tab-switch" />
+                    <label class="point-card" for="card4">
+                        <div class="point-card-name">
+                            <p>
+                                ¥2,501~3,000
+                            </p>
+                        </div>
+                        <div class="point-card-points">
+                            <p>
+                                250<span>P</span>
+                            </p>
+                        </div>
+                    </label>
+
+                    <input id="card5" type="radio" name="value-card" class="tab-switch" />
+                    <label class="point-card" for="card5">
+                        <div class="point-card-name">
+                            <p>
+                                ¥3,001~3,500
+                            </p>
+                        </div>
+                        <div class="point-card-points">
+                            <p>
+                                300<span>P</span>
+                            </p>
+                        </div>
+                    </label>
+
+                    <input id="card6" type="radio" name="value-card" class="tab-switch" />
+                    <label class="point-card" for="card6">
+                        <div class="point-card-name">
+                            <p>
+                                ¥3,501~4,000
+                            </p>
+                        </div>
+                        <div class="point-card-points">
+                            <p>
+                                350<span>P</span>
+                            </p>
+                        </div>
+                    </label>
+
+                    <input id="card7" type="radio" name="value-card" class="tab-switch" />
+                    <label class="point-card" for="card7">
+                        <div class="point-card-name">
+                            <p>
+                                ¥4,001~4,500
+                            </p>
+                        </div>
+                        <div class="point-card-points">
+                            <p>
+                                400<span>P</span>
+                            </p>
+                        </div>
+                    </label>
+                    <input id="card8" type="radio" name="value-card" class="tab-switch" />
+                    <label class="point-card" for="card8">
+                        <div class="point-card-name">
+                            <p>
+                                ¥4,501~4,999
+                            </p>
+                        </div>
+                        <div class="point-card-points">
+                            <p>
+                                450<span>P</span>
+                            </p>
+                        </div>
+                    </label>
+                    <input id="card9" type="radio" name="value-card" class="tab-switch" />
+                    <label class="point-card" for="card9">
+                        <div class="point-card-name">
+                            <p>
+                                ¥5,000~
+                            </p>
+                        </div>
+                        <div class="point-card-points">
+                            <p>
+                                500<span>P</span>
+                            </p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="swiper-slide">ランキング
+                <div class="lanch-point"></div>
+            </div>
+            <div class="swiper-slide">国内
+                <div class=" action-point"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="../js/index.js"></script>
 </body>
 

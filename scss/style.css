@@ -16,7 +16,8 @@ p, h4, h3, h2, h1 {
 
 body {
   margin: auto;
-  overflow-x: none;
+  position: relative;
+  overflow-x: hidden;
   font-family: "Noto sans","Noto sans JP", sans-serif;
   background-color: #F4F5F7;
 }
@@ -149,11 +150,6 @@ body .login button {
   width: 100%;
   border-radius: 10px;
   outline: none;
-}
-
-body .layout {
-  width: calc(100% - 48px);
-  margin: auto;
 }
 
 body .history-tab {
@@ -372,12 +368,19 @@ body .history .history-coupon .history-coupon-histories .history-coupon-historie
   margin-top: 0;
 }
 
-body .point .point-list {
-  width: 100%;
-  height: auto;
+body .point {
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 24px;
+  width: calc(100% - 48px) !important;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
-body .point .point-list .point-card {
+body .point .point-card {
   height: auto;
   padding: 24px;
   -webkit-box-sizing: border-box;
@@ -391,14 +394,17 @@ body .point .point-list .point-card {
   border-radius: 10px;
   margin-bottom: 12px;
   line-height: 80%;
+  width: 100%;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
-body .point .point-list .point-card .point-card-name {
+body .point .point-card .point-card-name {
   font-size: 16px;
   display: inline-block;
 }
 
-body .point .point-list .point-card .point-card-points {
+body .point .point-card .point-card-points {
   font-size: 16px;
   font-weight: bold;
   text-align: right;
@@ -407,15 +413,142 @@ body .point .point-list .point-card .point-card-points {
   margin-right: 16px;
 }
 
-body .point .point-list .point-card .point-card-points span {
+body .point .point-card .point-card-points span {
   color: #BDBDBD;
 }
 
-body .point .point-list .point-card .point-card-arrow {
+body .point .point-card .point-card-arrow {
   position: absolute;
   top: 0px;
   bottom: 0px;
   right: 12px;
   margin: auto;
+}
+
+body .point .tab-switch:checked ~ .point-card {
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  border: 0px solid #000;
+}
+
+body .point .tab-switch:checked + .point-card {
+  border: 2px solid #000;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+body .dinner-point {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+body .lanch-point {
+  background: black;
+  width: 100%;
+  height: 60px;
+}
+
+body .action-point {
+  background: #c03131;
+  width: 100%;
+  height: 60px;
+}
+
+.disabled {
+  color: #BDBDBD !important;
+}
+
+.tab-menu {
+  position: fixed !important;
+  z-index: 100 !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+}
+
+.tab-contents {
+  top: 48px !important;
+}
+
+.tab-wrap {
+  background: #F4F5F7;
+  display: -ms-grid !important;
+  display: grid !important;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+  top: 0px;
+}
+
+.tab-label-container {
+  height: auto !important;
+  text-align: center;
+  position: relative;
+}
+
+.tab-label {
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative !important;
+  line-height: 100%;
+  padding: 16px 0px !important;
+  text-align: center;
+  height: auto !important;
+  width: 100%;
+  display: block !important;
+}
+
+.tab-con {
+  -webkit-transition: cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab-switch {
+  display: none;
+}
+
+.swiper-slide-thumb-active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  margin: auto;
+  width: 100%;
+  top: 44px;
+  left: 0;
+  background: black;
+  color: #090835 !important;
+  font-weight: bold;
+  z-index: 1000;
+  -webkit-animation: nobi 0.2s forwards;
+          animation: nobi 0.2s forwards;
+}
+
+@-webkit-keyframes nobi {
+  to {
+    width: 100%;
+  }
+  from {
+    width: 0%;
+  }
+}
+
+@keyframes nobi {
+  to {
+    width: 100%;
+  }
+  from {
+    width: 0%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
