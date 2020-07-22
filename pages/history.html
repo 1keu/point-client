@@ -8,6 +8,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700;900&family=Noto+Sans:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sticky-sidebar@3.3.1/dist/sticky-sidebar.min.js"></script>
     <title>Portfolio</title>
 </head>
 
@@ -19,72 +22,143 @@
             <img src="../icon/menu.svg" alt="" class="menu-icon">
         </div>
     </div>
-    <div class="history-tab">
-        <div class="history-tab-left">
-            <p>ポイント</p>
-        </div>
-        <div class="history-tab-right history-inactive">
-            <p>クーポン</p>
+    <div class="swiper-container history-tab-menu">
+        <div class="swiper-wrapper history-tab" name="tabWrap">
+            <div class="swiper-slide tab-label-container">
+                <input id="TAB-01" type="radio" name="tab" class="tab-switch" checked />
+                <label class="tab-label" for="TAB-01">ポイント履歴</label>
+            </div>
+            <div class="swiper-slide tab-label-container">
+                <input id="TAB-02" type="radio" name="tab" class="tab-switch" />
+                <label class=" tab-label" for="TAB-02">クーポン履歴</label>
+            </div>
         </div>
     </div>
-    <div class="history">
-        <div class="history-point">
-            <div class="history-point-total">
-                <div class="gived-point">
-                    <p>配布したポイント</p>
-                </div>
-                <div class="total-point">
-                    <p>20000<span class="point-p">P</span></p>
+
+    <div class="swiper-container history-tab-contents">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class=" history">
+                    <div class="history-point">
+                        <div class="history-point-total">
+                            <div class="gived-point">
+                                <p>配布したポイント</p>
+                            </div>
+                            <div class="total-point">
+                                <p>20000<span class="point-p">P</span></p>
+                            </div>
+                        </div>
+                        <div class="history-point-histories-month ">
+                            <div class="month">
+                                <p>2020年11月２日</p>
+                            </div>
+                            <div class="month-points">
+                                <p><span class="month-points-total">合計 </span>2000<span class="month-points-p">P</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="history-point-histories">
+                            <div class="history-point-histories-card">
+                                <div class="card-username">
+                                    <p>かける</p>
+                                </div>
+                                <div>
+                                    <p class="card-day">2020/11/3</p>
+                                    <p class="card-points">30P</p>
+                                </div>
+                            </div>
+                            <div class="history-point-histories-card">
+                                <div class="card-username">
+                                    <p>かける</p>
+                                </div>
+                                <div>
+                                    <p class="card-day">2020/11/3</p>
+                                    <p class="card-points">30P</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <div class="swiper-slide">
+                <div class="history">
+                    <div class="history-coupon">
+                        <div class="history-coupon-histories-month">
+                            <div class="month">
+                                <p>2020年11月２日</p>
+                            </div>
+                        </div>
+                        <div class="history-coupon-histories">
 
-            <div class="history-point-histories-month">
-                <div class="month">
-                    <p>2020年11月２日</p>
-                </div>
-                <div class="month-points">
-                    <p><span class="month-points-total">合計 </span>2000<span class="month-points-p">P</span>
-                    </p>
-                </div>
-            </div>
+                            <div class="history-coupon-histories-card">
+                                <div>
+                                    <p class="card-coupon-username">かける</p>
+                                    <p class="card-coupon-couponname">しねーーー</p>
+                                </div>
+                                <div>
+                                    <p class="card-day">2020/11/3</p>
+                                    <p class="card-points">30P</p>
+                                </div>
+                            </div>
 
-
-            <div class="history-point-histories">
-
-                <div class="history-point-histories-card">
-                    <div class="card-username">
-                        <p>かける</p>
+                        </div>
                     </div>
-                    <div>
-                        <p class="card-day">2020/11/3</p>
-                        <p class="card-points">30P</p>
-                    </div>
                 </div>
-
             </div>
         </div>
+    </div>
+    <div class="nav-bar">
+        <div class="nav-bar-contents">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M22 11.6973C27.686 11.6973 32.3027 16.314 32.3027 22C32.3027 27.686 27.686 32.3027 22 32.3027C16.314 32.3027 11.6973 27.686 11.6973 22C11.6973 16.314 16.314 11.6973 22 11.6973ZM22 10C15.3635 10 10 15.3805 10 22C10 28.6195 15.3805 34 22 34C28.6195 34 34 28.6195 34 22C34 15.3805 28.6365 10 22 10Z"
+                    fill="black" />
+                <path
+                    d="M18.5713 17.6209C18.5713 17.3832 18.758 17.1965 18.9956 17.1965H23.0182C25.3096 17.1965 26.8542 18.4695 26.8542 20.5233C26.8542 22.8656 25.089 23.9349 22.9673 23.9349H21.3209C21.0833 23.9349 20.8966 24.1216 20.8966 24.3592V27.5162C20.8966 27.7538 20.7099 27.9405 20.4723 27.9405H18.9956C18.758 27.9405 18.5713 27.7538 18.5713 27.5162V17.6209V17.6209ZM20.8966 21.6605C20.8966 21.8981 21.0833 22.0848 21.3209 22.0848H22.6788C23.7481 22.0848 24.5289 21.6605 24.5289 20.5742C24.5289 19.4709 23.7141 19.0466 22.7297 19.0466H21.3209C21.0833 19.0466 20.8966 19.2333 20.8966 19.4709V21.6605V21.6605Z"
+                    fill="black" />
+            </svg>
 
-        <div class="history-coupon in-active">
-            <div class="history-coupon-histories-month">
-                <div class="month">
-                    <p>2020年11月２日</p>
-                </div>
-            </div>
-            <div class="history-coupon-histories">
+            <p class="nav-name">ポイント付与</p>
+        </div>
+        <div class="nav-bar-contents">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M17.4986 17.5C16.9946 17.5 16.5986 17.104 16.5986 16.6C16.5986 16.096 16.9946 15.7 17.4986 15.7C18.0026 15.7 18.3986 16.096 18.3986 16.6C18.3986 17.104 18.0026 17.5 17.4986 17.5Z"
+                    fill="black" />
+                <path
+                    d="M17.4986 21.1003C16.9946 21.1003 16.5986 20.7043 16.5986 20.2003C16.5986 19.6963 16.9946 19.3003 17.4986 19.3003C18.0026 19.3003 18.3986 19.6963 18.3986 20.2003C18.3986 20.7043 18.0026 21.1003 17.4986 21.1003Z"
+                    fill="black" />
+                <path
+                    d="M17.4986 24.6999C16.9946 24.6999 16.5986 24.3039 16.5986 23.7999C16.5986 23.2959 16.9946 22.8999 17.4986 22.8999C18.0026 22.8999 18.3986 23.2959 18.3986 23.7999C18.3986 24.3039 18.0026 24.6999 17.4986 24.6999Z"
+                    fill="black" />
+                <path
+                    d="M17.4986 28.3C16.9946 28.3 16.5986 27.904 16.5986 27.4C16.5986 26.896 16.9946 26.5 17.4986 26.5C18.0026 26.5 18.3986 26.896 18.3986 27.4C18.3986 27.904 18.0026 28.3 17.4986 28.3Z"
+                    fill="black" />
+                <path
+                    d="M38.2 14.8V29.2H5.8V14.8H38.2ZM38.2 13H5.8C4.81 13 4 13.81 4 14.8V29.2C4 30.19 4.81 31 5.8 31H38.2C39.19 31 40 30.19 40 29.2V14.8C40 13.81 39.19 13 38.2 13Z"
+                    fill="black" />
+                <path
+                    d="M27.3258 20.0739C27.3258 20.3619 27.2718 20.6139 27.1638 20.8659C27.0558 21.1179 26.9118 21.3339 26.7318 21.5139C26.5518 21.6939 26.3358 21.8379 26.0838 21.9459C25.8318 22.0539 25.5618 22.1079 25.2918 22.1079C25.0218 22.1079 24.7518 22.0539 24.4998 21.9459C24.2478 21.8379 24.0318 21.6939 23.8518 21.5139C23.6718 21.3339 23.5278 21.1179 23.4198 20.8659C23.3118 20.6139 23.2578 20.3619 23.2578 20.0739C23.2578 19.7859 23.3118 19.5159 23.4198 19.2639C23.5278 19.0119 23.6718 18.7959 23.8518 18.6159C24.0318 18.4359 24.2478 18.2919 24.4998 18.1839C24.7518 18.0759 25.0218 18.0219 25.2918 18.0219C25.5618 18.0219 25.8318 18.0759 26.0838 18.1839C26.3358 18.2919 26.5518 18.4359 26.7318 18.6159C26.9118 18.7959 27.0558 19.0119 27.1638 19.2639C27.2718 19.5159 27.3258 19.7859 27.3258 20.0739ZM26.1198 20.0739C26.1198 19.8399 26.0298 19.6419 25.8678 19.4799C25.7058 19.3179 25.5078 19.2279 25.2738 19.2279C25.0398 19.2279 24.8418 19.3179 24.6798 19.4799C24.5178 19.6419 24.4278 19.8399 24.4278 20.0739C24.4278 20.2899 24.5178 20.5059 24.6798 20.6679C24.8418 20.8299 25.0398 20.9019 25.2738 20.9019C25.5078 20.9019 25.7058 20.8299 25.8678 20.6679C26.0298 20.5239 26.1198 20.3079 26.1198 20.0739ZM25.8858 26.0679L25.3998 25.8339C25.2558 25.7619 25.2018 25.5999 25.2918 25.4559L29.4858 18.0399C29.5578 17.9139 29.7018 17.8599 29.8458 17.9319L30.3678 18.1839C30.5118 18.2559 30.5658 18.4179 30.4758 18.5619L26.2458 25.9599C26.1558 26.0859 26.0118 26.1399 25.8858 26.0679ZM32.5098 23.9079C32.5098 24.1959 32.4558 24.4479 32.3478 24.6999C32.2398 24.9519 32.0958 25.1679 31.9158 25.3479C31.7358 25.5279 31.5198 25.6719 31.2678 25.7799C31.0158 25.8879 30.7458 25.9419 30.4758 25.9419C30.2058 25.9419 29.9358 25.8879 29.6838 25.7799C29.4318 25.6719 29.2158 25.5279 29.0358 25.3479C28.8558 25.1679 28.7118 24.9519 28.6038 24.6999C28.4958 24.4479 28.4418 24.1959 28.4418 23.9079C28.4418 23.6199 28.4958 23.3679 28.6038 23.1159C28.7118 22.8639 28.8558 22.6479 29.0358 22.4679C29.2158 22.2879 29.4318 22.1439 29.6838 22.0359C29.9358 21.9279 30.2058 21.8739 30.4758 21.8739C30.7458 21.8739 31.0158 21.9279 31.2678 22.0359C31.5198 22.1439 31.7358 22.2879 31.9158 22.4679C32.0958 22.6479 32.2398 22.8639 32.3478 23.1159C32.4558 23.3679 32.5098 23.6199 32.5098 23.9079ZM31.3038 23.9079C31.3038 23.7999 31.2858 23.6919 31.2318 23.5839C31.1778 23.4759 31.1238 23.3859 31.0518 23.3139C30.9798 23.2419 30.8898 23.1699 30.7818 23.1339C30.6738 23.0979 30.5658 23.0619 30.4578 23.0619C30.2238 23.0619 30.0258 23.1519 29.8638 23.3139C29.7018 23.4759 29.6118 23.6739 29.6118 23.9079C29.6118 24.1239 29.7018 24.3399 29.8638 24.5019C30.0258 24.6639 30.2238 24.7359 30.4578 24.7359C30.5658 24.7359 30.6738 24.7179 30.7818 24.6639C30.8898 24.6279 30.9618 24.5559 31.0518 24.4839C31.1418 24.4119 31.1958 24.3219 31.2318 24.2139C31.2678 24.1239 31.3038 24.0159 31.3038 23.9079Z"
+                    fill="black" />
+            </svg>
 
-                <div class="history-coupon-histories-card">
-                    <div>
-                        <p class="card-coupon-username">かける</p>
-                        <p class="card-coupon-couponname">しねーーー</p>
-                    </div>
-                    <div>
-                        <p class="card-day">2020/11/3</p>
-                        <p class="card-points">30P</p>
-                    </div>
-                </div>
+            <p class="nav-name">クーポン</p>
+        </div>
+        <div class="nav-bar-contents">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12.3336 22.01H8.34264C8.05393 22.01 7.90107 22.3327 8.0709 22.5535L10.0579 25.0669C10.1258 25.1518 10.2277 25.2028 10.3296 25.2028C10.4315 25.2028 10.5334 25.1518 10.6014 25.0669L12.5884 22.5704C12.7752 22.3327 12.6053 22.01 12.3336 22.01Z"
+                    fill="#298AE4" />
+                <path
+                    d="M21.8103 10.0031C15.0511 9.8503 9.51465 15.2848 9.51465 22.0101H11.2129C11.2129 16.3208 15.8323 11.7014 21.5216 11.7014C27.3637 11.7014 32.1019 16.5925 31.8132 22.5026C31.5585 27.7163 27.3977 31.9621 22.1839 32.2847C19.2459 32.4715 16.5626 31.4356 14.5756 29.6184C14.3718 29.4316 14.0661 29.4486 13.8793 29.6354L13.3868 30.1279C13.183 30.3317 13.183 30.6714 13.4037 30.8582C15.5436 32.8112 18.3797 34 21.5046 34C28.2298 34 33.6644 28.4636 33.5115 21.7044C33.3756 15.3528 28.1789 10.156 21.8103 10.0031Z"
+                    fill="#298AE4" />
+                <path
+                    d="M24.7991 26.4935L20.91 22.6044C20.7572 22.4516 20.6553 22.2308 20.6553 22.01V14.028C20.6553 13.7393 20.8761 13.5186 21.1648 13.5186H21.8441C22.1328 13.5186 22.3536 13.7393 22.3536 14.028V21.4835C22.3536 21.6024 22.4045 21.7043 22.4724 21.7892L25.9879 25.3047C26.1917 25.5085 26.1917 25.8312 25.9879 26.018L25.5124 26.4935C25.3256 26.6973 25.0029 26.6973 24.7991 26.4935Z"
+                    fill="#298AE4" />
+            </svg>
 
-            </div>
+            <p class="nav-name this-page">履歴</p>
         </div>
     </div>
     <script src="../js/index.js"></script>
