@@ -264,6 +264,18 @@ body .login div .visible {
   bottom: 0;
   right: 16px;
   margin: auto;
+  height: 24px;
+  width: 24px;
+  z-index: 10;
+  background: url(../icon/visibility_24px_outlined.svg);
+}
+
+body .login div .visible-input {
+  display: none;
+}
+
+body .login div .visible-input:checked ~ .visible {
+  background: url(../icon/visibility_off_24px_outlined.svg);
 }
 
 body .history-tab {
@@ -827,6 +839,43 @@ body .modal .coupon-detail-container .coupon-detail-contents .coupon-detail-valu
   font-size: 16px;
   font-weight: 300;
   text-decoration: line-through;
+}
+
+body .modal .coupon-detail-container .coupon-detail-contents .modal-point {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+body .modal .coupon-detail-container .coupon-detail-contents .modal-give-point-sentence {
+  font-size: 12px;
+  line-height: 130%;
+  padding-top: 16px;
+}
+
+body .modal .coupon-detail-container .coupon-detail-contents .modal-give-point-sentence span {
+  font-weight: bold;
+}
+
+body .modal .coupon-detail-container .coupon-detail-contents .qr-img {
+  position: relative;
+  width: 100%;
+  background: #BDBDBD;
+}
+
+body .modal .coupon-detail-container .coupon-detail-contents .qr-img:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /* 高さを幅の75%に固定 */
+}
+
+body .modal .coupon-detail-container .coupon-detail-contents .qr-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 body .modal .coupon-scan-check {
