@@ -8,15 +8,29 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700;900&family=Noto+Sans:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <title>Portfolio</title>
 </head>
 
 <body>
+    <nav class="global-nav">
+        <div id="js-close" class="close-icon">
+        </div>
+        <div class="glbal-nav-list">
+            <p>トップ</p>
+            <p>お問い合わせ</p>
+            <div class="border"></div>
+            <p>ログアウト</p>
+        </div>
+    </nav>
+    <div class="black-bg" id="js-black-bg"></div>
     <div class="fix-header">
         <div class="header ">
             <h1 class="page-name">クーポン
             </h1>
-            <img src="../icon/menu.svg" alt="" class="menu-icon">
+            <div id="js-hamburger" class="menu-icon">
+            </div>
         </div>
     </div>
     <section class="layout coupon">

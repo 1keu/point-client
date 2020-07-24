@@ -11,6 +11,66 @@
   }
 }
 
+.global-nav {
+  position: fixed;
+  right: -320px;
+  /* これで隠れる */
+  top: 0;
+  width: 70%;
+  /* スマホに収まるくらい */
+  height: 100vh;
+  background: #fff;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  z-index: 2000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 72px 24px 0px 24px;
+  overflow-y: auto;
+  /* メニューが多くなったらスクロールできるように */
+}
+
+.glbal-nav-list {
+  color: #383638;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.glbal-nav-list p {
+  margin-bottom: 32px;
+}
+
+.glbal-nav-list .border {
+  height: 0px;
+  border-bottom: 1px solid #bdbdbd;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.nav-open .global-nav {
+  right: 0 !important;
+}
+
+.nav-open .black-bg {
+  opacity: .8;
+  visibility: visible;
+}
+
+.black-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  cursor: pointer;
+}
+
 p, h4, h3, h2, h1 {
   margin: auto;
 }
@@ -88,7 +148,7 @@ body .fix-header {
   top: 0;
   height: 56px;
   margin: auto;
-  z-index: 100;
+  z-index: 70;
   background-color: #F4F5F7;
 }
 
@@ -101,6 +161,17 @@ body .coupon-detail-fix-header {
   z-index: 100;
 }
 
+body .close-icon {
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  margin: auto;
+  z-index: 2000;
+  height: 32px;
+  width: 32px;
+  background: url(../icon/close.svg);
+}
+
 body .nav-bar {
   height: 56px;
   background-color: #F4F5F7;
@@ -109,7 +180,7 @@ body .nav-bar {
   bottom: 0;
   display: -ms-grid;
   display: grid;
-  z-index: 1000;
+  z-index: 72;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
@@ -213,10 +284,18 @@ body .header .logo {
 
 body .header .menu-icon {
   position: absolute;
+  right: 0px;
   top: 0;
   bottom: 0;
-  right: 0px;
   margin: auto;
+  z-index: 2000;
+  height: 32px;
+  width: 32px;
+  background: url(../icon/menu.svg);
+}
+
+body .header .hide {
+  display: none;
 }
 
 body .header .back-icon {
@@ -673,7 +752,7 @@ body .selected-var {
   width: 100%;
   position: fixed;
   bottom: 56px;
-  z-index: 1000;
+  z-index: 71;
 }
 
 body .selected-var .selected-container {
@@ -1203,7 +1282,7 @@ body .modal .coupon-scan-check span input[type="checkbox" i] {
 
 .tab-menu {
   position: fixed !important;
-  z-index: 100 !important;
+  z-index: 70 !important;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -1220,7 +1299,7 @@ body .modal .coupon-scan-check span input[type="checkbox" i] {
 
 .history-tab-menu {
   position: fixed !important;
-  z-index: 100 !important;
+  z-index: 10 !important;
   width: 100%;
   margin-left: auto;
   margin-right: auto;

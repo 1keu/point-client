@@ -14,11 +14,35 @@
 </head>
 
 <body>
+    <script>
+
+        var selectedCon = document.querySelector(".selected-container");
+        var arrowIcon = document.querySelector(".up-icon");
+        var selectedHeader = document.getElementById("selected-header");
+        console.log(selectedHeader.addEventListener("click", showHide))
+        function showHide() {
+            console.log("g")
+            selectedCon.classList.toggle("selected-open")
+            arrowIcon.classList.toggle("up-icon-reverse")
+        }
+    </script>
+    <nav class="global-nav">
+        <div id="js-close" class="close-icon">
+        </div>
+        <div class="glbal-nav-list">
+            <p>トップ</p>
+            <p>お問い合わせ</p>
+            <div class="border"></div>
+            <p>ログアウト</p>
+        </div>
+    </nav>
+    <div class="black-bg" id="js-black-bg"></div>
     <div class="fix-header">
         <div class="header ">
             <h1 class="page-name">ポイント配布
             </h1>
-            <img src="../icon/menu.svg" alt="" class="menu-icon">
+            <div id="js-hamburger" class="menu-icon">
+            </div>
         </div>
     </div>
 
