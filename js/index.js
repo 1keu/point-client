@@ -31,3 +31,13 @@ var historyTop = new Swiper('.history-tab-contents', {
         swiper: historyThumbs
     }
 });
+
+var selectedCon = document.querySelector(".selected-container");
+var arrowIcon = document.querySelector(".up-icon");
+var selectedHeader = document.getElementById("selected-header");
+console.log(selectedHeader.addEventListener("click", showHide))
+function showHide() {
+    console.log("g")
+    selectedCon.classList.toggle("selected-open")
+    arrowIcon.classList.toggle("up-icon-reverse")
+}
